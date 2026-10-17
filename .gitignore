@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+local-runtime/
+local-operator/
+demo-run/
+*.mp4
+*.wav
+*.bundle
+*.tar.gz
+.DS_Store

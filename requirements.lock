@@ -1,0 +1,6 @@
+# Proposed reproducible CPython 3.12 runtime; PyPI wheel hashes checked in primary metadata.
+# Installation/resolution is NOT yet verified in this environment. No extras or source builds.
+falkordb==1.8.0 --hash=sha256:49c346399661eb16449dadf58c0a9784eb79847ba7f82376c6a7ab2455362094
+redis==8.0.0 --hash=sha256:c938c18338585009f0bc310f4c7e4e4b4d37639356c4ac072cedf3af570c8dc7
+python-dateutil==2.9.0.post0 --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+six==1.17.0 --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274

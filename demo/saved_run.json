@@ -1,0 +1,879 @@
+{
+  "classification": "synthetic",
+  "confirmation": {
+    "approved_digest": "2c83c684bdfb2c955af7d64aa339655cbe8310b0f4890023c278c18454c41836",
+    "event": {
+      "company": "",
+      "confirmation": "A",
+      "id": "evidence_method_v1",
+      "kind": "Policy",
+      "known_at": "2026-10-16T20:47:05Z",
+      "message": "For all my company reviews, keep forecasts separate from actual results. Use the confirmed label only when at least two distinct qualified primary evidence origins support the same actual figures for the same metric, period, unit and coverage.",
+      "min_origins": 2,
+      "proposal_sha256": "2c83c684bdfb2c955af7d64aa339655cbe8310b0f4890023c278c18454c41836",
+      "rule_id": "evidence_method",
+      "scope": "task",
+      "separate_forecasts": true,
+      "status": "accepted",
+      "supersedes": "",
+      "task": "company_reviews",
+      "tenant": "A",
+      "valid_at": "2026-10-16T20:47:05Z",
+      "version": 1
+    },
+    "proposal": {
+      "company": "",
+      "family": "qualified_origins",
+      "min_origins": 2,
+      "schema_version": 2,
+      "scope": "task",
+      "separate_forecasts": true
+    }
+  },
+  "execution": "saved actual model outputs; not a new live model run",
+  "manifest_after": {
+    "edges": [
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "acme_report",
+        "target": "acme_filing",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "forecast_article",
+        "target": "forecast_origin",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "report_a",
+        "target": "filing_w",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "report_b",
+        "target": "filing_c",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "report_copy",
+        "target": "report_a",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T20:46:40Z",
+        "rel": "REVIEWED",
+        "source": "acme_episode",
+        "target": "acme_report",
+        "valid_at": "2026-10-16T20:46:40Z"
+      },
+      {
+        "known_at": "2026-10-16T20:47:05Z",
+        "rel": "CONFIRMED_BY",
+        "source": "evidence_method_v1",
+        "target": "A",
+        "valid_at": "2026-10-16T20:47:05Z"
+      },
+      {
+        "known_at": "2026-10-16T20:47:05Z",
+        "rel": "FROM_EPISODE",
+        "source": "evidence_method_v1",
+        "target": "acme_episode",
+        "valid_at": "2026-10-16T20:47:05Z"
+      }
+    ],
+    "nodes": [
+      {
+        "company": "",
+        "id": "A",
+        "kind": "User",
+        "known_at": "2026-10-16T00:00:00Z",
+        "task": "company_reviews",
+        "tenant": "A",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "answer_sha256": "10e7a8c7391445368690e6102d9bfd911f614c418a7f62d6b6659c0481040c90",
+        "company": "Acme",
+        "id": "acme_episode",
+        "kind": "Episode",
+        "known_at": "2026-10-16T20:46:40Z",
+        "summary": "Acme's FY2025 consolidated annual revenue increased from USD 100 million to USD 110 million, a gain of USD 10 million. No applicable confirmed user policy was retrieved.",
+        "task": "company_reviews",
+        "tenant": "A",
+        "valid_at": "2026-10-16T20:46:40Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Acme",
+        "coverage": "consolidated",
+        "current": "110",
+        "id": "acme_filing",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "100",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "acme_filing: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Acme",
+        "coverage": "consolidated",
+        "current": "110",
+        "id": "acme_report",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "100",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "acme_report: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "company": "",
+        "confirmation": "A",
+        "id": "evidence_method_v1",
+        "kind": "Policy",
+        "known_at": "2026-10-16T20:47:05Z",
+        "message": "For all my company reviews, keep forecasts separate from actual results. Use the confirmed label only when at least two distinct qualified primary evidence origins support the same actual figures for the same metric, period, unit and coverage.",
+        "min_origins": 2,
+        "proposal_sha256": "2c83c684bdfb2c955af7d64aa339655cbe8310b0f4890023c278c18454c41836",
+        "rule_id": "evidence_method",
+        "scope": "task",
+        "separate_forecasts": true,
+        "status": "accepted",
+        "supersedes": "",
+        "task": "company_reviews",
+        "tenant": "A",
+        "valid_at": "2026-10-16T20:47:05Z",
+        "version": 1
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "filing_c",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "filing_c: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "filing_w",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "filing_w: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "forecast",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "300",
+        "id": "forecast_article",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "forecast_article: forecast consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "forecast",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "300",
+        "id": "forecast_origin",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "forecast_origin: forecast consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "report_a",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "report_a: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "report_b",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "report_b: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "report_copy",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "report_copy: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      }
+    ],
+    "schema_version": 2
+  },
+  "manifest_before": {
+    "edges": [
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "acme_report",
+        "target": "acme_filing",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "forecast_article",
+        "target": "forecast_origin",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "report_a",
+        "target": "filing_w",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "report_b",
+        "target": "filing_c",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "known_at": "2026-10-16T00:00:00Z",
+        "rel": "ORIGIN",
+        "source": "report_copy",
+        "target": "report_a",
+        "valid_at": "2026-10-16T00:00:00Z"
+      }
+    ],
+    "nodes": [
+      {
+        "company": "",
+        "id": "A",
+        "kind": "User",
+        "known_at": "2026-10-16T00:00:00Z",
+        "task": "company_reviews",
+        "tenant": "A",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Acme",
+        "coverage": "consolidated",
+        "current": "110",
+        "id": "acme_filing",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "100",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "acme_filing: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Acme",
+        "coverage": "consolidated",
+        "current": "110",
+        "id": "acme_report",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "100",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "acme_report: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "filing_c",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "filing_c: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "filing_w",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "filing_w: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "forecast",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "300",
+        "id": "forecast_article",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "forecast_article: forecast consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "forecast",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "300",
+        "id": "forecast_origin",
+        "kind": "Primary",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "qualified": true,
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "forecast_origin: forecast consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "report_a",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "report_a: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "report_b",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "report_b: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      },
+      {
+        "category": "actual",
+        "closed": true,
+        "company": "Orbit",
+        "coverage": "consolidated",
+        "current": "240",
+        "id": "report_copy",
+        "kind": "Observation",
+        "known_at": "2026-10-16T00:00:00Z",
+        "metric": "revenue",
+        "period": "FY2025",
+        "previous": "200",
+        "task": "company_reviews",
+        "tenant": "A",
+        "text": "report_copy: actual consolidated annual revenue.",
+        "unit": "million_USD",
+        "valid_at": "2026-10-16T00:00:00Z"
+      }
+    ],
+    "schema_version": 2
+  },
+  "recorded_scenario": {
+    "conversations": 2,
+    "date": "2026-10-17",
+    "first_report_and_feedback_share_conversation": true,
+    "model_responses": 3,
+    "second_company_has_fresh_conversation": true
+  },
+  "requests": {
+    "propose_method": {
+      "context": null,
+      "prompt": "Respond to the user comment in this same conversation. Return only the required JSON object in English, without tools. Convert the comment to a supported typed proposal; observations=[] and rule_references=[]. interpretation is a JSON-encoded object with exactly proposal and acknowledgement. proposal has exactly schema_version (integer 2), family (qualified_origins), scope (task or company), company (empty for task scope), min_origins (integer 1 through 3), separate_forecasts (boolean). Derive values only from the user comment, without defaults. acknowledgement is your brief natural reply accepting the requested review method for future company reviews. The application will display this reply only after it validates and commits the proposal. Do not claim a database write or verification you performed. Do not repeat the report or include new numerical facts.\nUSER COMMENT: For all my company reviews, keep forecasts separate from actual results. Use the confirmed label only when at least two distinct qualified primary evidence origins support the same actual figures for the same metric, period, unit and coverage."
+    },
+    "review_acme": {
+      "context": {
+        "policies": [],
+        "provenance_paths": [
+          [
+            "acme_report",
+            "acme_filing"
+          ]
+        ],
+        "records": [
+          {
+            "category": "actual",
+            "closed": true,
+            "company": "Acme",
+            "coverage": "consolidated",
+            "current": "110",
+            "id": "acme_filing",
+            "kind": "Primary",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "100",
+            "qualified": true,
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "acme_filing: actual consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          },
+          {
+            "category": "actual",
+            "closed": true,
+            "company": "Acme",
+            "coverage": "consolidated",
+            "current": "110",
+            "id": "acme_report",
+            "kind": "Observation",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "100",
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "acme_report: actual consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          }
+        ],
+        "request": {
+          "company": "Acme",
+          "knowledge": "2026-10-16T20:46:32Z",
+          "market": "2026-10-16T20:46:32Z",
+          "task": "company_reviews",
+          "tenant": "A"
+        }
+      },
+      "prompt": "Return only the required JSON object. Do not use tools. All human-readable text must be English. Use only the provided records and provenance paths for numerical claims. Do not invent facts or user preferences. Apply any applicable confirmed user policy retrieved in memory. Make your assessment from the records and that memory; no assessment has been supplied. title is a concise heading. interpretation is a JSON-encoded string object with exactly summary, status, origin_ids. summary is your concise review. status is policy_required if no applicable user policy was retrieved, otherwise evidence_policy_met or policy_not_met according to that policy. origin_ids lists the primary-source record IDs supporting the main numerical result you report. observations lists one or more grounded numeric rows with metric, previous, current, change, unit and evidence_ids from the provided records. change is current minus previous in the same unit. rule_references lists the IDs of the retrieved user policies you applied, or an empty list.\nUSER REQUEST: Prepare a company review of Acme using its latest available evidence.\nFALKORDB MEMORY AND EVIDENCE: {\"policies\":[],\"provenance_paths\":[[\"acme_report\",\"acme_filing\"]],\"records\":[{\"category\":\"actual\",\"closed\":true,\"company\":\"Acme\",\"coverage\":\"consolidated\",\"current\":\"110\",\"id\":\"acme_filing\",\"kind\":\"Primary\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"100\",\"qualified\":true,\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"acme_filing: actual consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"},{\"category\":\"actual\",\"closed\":true,\"company\":\"Acme\",\"coverage\":\"consolidated\",\"current\":\"110\",\"id\":\"acme_report\",\"kind\":\"Observation\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"100\",\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"acme_report: actual consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"}],\"request\":{\"company\":\"Acme\",\"knowledge\":\"2026-10-16T20:46:32Z\",\"market\":\"2026-10-16T20:46:32Z\",\"task\":\"company_reviews\",\"tenant\":\"A\"}}"
+    },
+    "review_orbit": {
+      "context": {
+        "policies": [
+          {
+            "company": "",
+            "confirmation": "A",
+            "id": "evidence_method_v1",
+            "kind": "Policy",
+            "known_at": "2026-10-16T20:47:05Z",
+            "message": "For all my company reviews, keep forecasts separate from actual results. Use the confirmed label only when at least two distinct qualified primary evidence origins support the same actual figures for the same metric, period, unit and coverage.",
+            "min_origins": 2,
+            "proposal_sha256": "2c83c684bdfb2c955af7d64aa339655cbe8310b0f4890023c278c18454c41836",
+            "rule_id": "evidence_method",
+            "scope": "task",
+            "separate_forecasts": true,
+            "status": "accepted",
+            "supersedes": "",
+            "task": "company_reviews",
+            "tenant": "A",
+            "valid_at": "2026-10-16T20:47:05Z",
+            "version": 1
+          }
+        ],
+        "provenance_paths": [
+          [
+            "forecast_article",
+            "forecast_origin"
+          ],
+          [
+            "report_a",
+            "filing_w"
+          ],
+          [
+            "report_b",
+            "filing_c"
+          ],
+          [
+            "report_copy",
+            "report_a",
+            "filing_w"
+          ]
+        ],
+        "records": [
+          {
+            "category": "actual",
+            "closed": true,
+            "company": "Orbit",
+            "coverage": "consolidated",
+            "current": "240",
+            "id": "filing_c",
+            "kind": "Primary",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "200",
+            "qualified": true,
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "filing_c: actual consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          },
+          {
+            "category": "actual",
+            "closed": true,
+            "company": "Orbit",
+            "coverage": "consolidated",
+            "current": "240",
+            "id": "filing_w",
+            "kind": "Primary",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "200",
+            "qualified": true,
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "filing_w: actual consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          },
+          {
+            "category": "forecast",
+            "closed": true,
+            "company": "Orbit",
+            "coverage": "consolidated",
+            "current": "300",
+            "id": "forecast_article",
+            "kind": "Observation",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "200",
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "forecast_article: forecast consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          },
+          {
+            "category": "forecast",
+            "closed": true,
+            "company": "Orbit",
+            "coverage": "consolidated",
+            "current": "300",
+            "id": "forecast_origin",
+            "kind": "Primary",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "200",
+            "qualified": true,
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "forecast_origin: forecast consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          },
+          {
+            "category": "actual",
+            "closed": true,
+            "company": "Orbit",
+            "coverage": "consolidated",
+            "current": "240",
+            "id": "report_a",
+            "kind": "Observation",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "200",
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "report_a: actual consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          },
+          {
+            "category": "actual",
+            "closed": true,
+            "company": "Orbit",
+            "coverage": "consolidated",
+            "current": "240",
+            "id": "report_b",
+            "kind": "Observation",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "200",
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "report_b: actual consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          },
+          {
+            "category": "actual",
+            "closed": true,
+            "company": "Orbit",
+            "coverage": "consolidated",
+            "current": "240",
+            "id": "report_copy",
+            "kind": "Observation",
+            "known_at": "2026-10-16T00:00:00Z",
+            "metric": "revenue",
+            "period": "FY2025",
+            "previous": "200",
+            "task": "company_reviews",
+            "tenant": "A",
+            "text": "report_copy: actual consolidated annual revenue.",
+            "unit": "million_USD",
+            "valid_at": "2026-10-16T00:00:00Z"
+          }
+        ],
+        "request": {
+          "company": "Orbit",
+          "knowledge": "2026-10-16T20:47:34Z",
+          "market": "2026-10-16T20:47:34Z",
+          "task": "company_reviews",
+          "tenant": "A"
+        }
+      },
+      "prompt": "Return only the required JSON object. Do not use tools. All human-readable text must be English. Use only the provided records and provenance paths for numerical claims. Do not invent facts or user preferences. Apply any applicable confirmed user policy retrieved in memory. Make your assessment from the records and that memory; no assessment has been supplied. title is a concise heading. interpretation is a JSON-encoded string object with exactly summary, status, origin_ids. summary is your concise review. status is policy_required if no applicable user policy was retrieved, otherwise evidence_policy_met or policy_not_met according to that policy. origin_ids lists the primary-source record IDs supporting the main numerical result you report. observations lists one or more grounded numeric rows with metric, previous, current, change, unit and evidence_ids from the provided records. change is current minus previous in the same unit. rule_references lists the IDs of the retrieved user policies you applied, or an empty list.\nUSER REQUEST: Prepare a company review of Orbit using its latest available evidence.\nFALKORDB MEMORY AND EVIDENCE: {\"policies\":[{\"company\":\"\",\"confirmation\":\"A\",\"id\":\"evidence_method_v1\",\"kind\":\"Policy\",\"known_at\":\"2026-10-16T20:47:05Z\",\"message\":\"For all my company reviews, keep forecasts separate from actual results. Use the confirmed label only when at least two distinct qualified primary evidence origins support the same actual figures for the same metric, period, unit and coverage.\",\"min_origins\":2,\"proposal_sha256\":\"2c83c684bdfb2c955af7d64aa339655cbe8310b0f4890023c278c18454c41836\",\"rule_id\":\"evidence_method\",\"scope\":\"task\",\"separate_forecasts\":true,\"status\":\"accepted\",\"supersedes\":\"\",\"task\":\"company_reviews\",\"tenant\":\"A\",\"valid_at\":\"2026-10-16T20:47:05Z\",\"version\":1}],\"provenance_paths\":[[\"forecast_article\",\"forecast_origin\"],[\"report_a\",\"filing_w\"],[\"report_b\",\"filing_c\"],[\"report_copy\",\"report_a\",\"filing_w\"]],\"records\":[{\"category\":\"actual\",\"closed\":true,\"company\":\"Orbit\",\"coverage\":\"consolidated\",\"current\":\"240\",\"id\":\"filing_c\",\"kind\":\"Primary\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"200\",\"qualified\":true,\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"filing_c: actual consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"},{\"category\":\"actual\",\"closed\":true,\"company\":\"Orbit\",\"coverage\":\"consolidated\",\"current\":\"240\",\"id\":\"filing_w\",\"kind\":\"Primary\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"200\",\"qualified\":true,\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"filing_w: actual consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"},{\"category\":\"forecast\",\"closed\":true,\"company\":\"Orbit\",\"coverage\":\"consolidated\",\"current\":\"300\",\"id\":\"forecast_article\",\"kind\":\"Observation\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"200\",\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"forecast_article: forecast consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"},{\"category\":\"forecast\",\"closed\":true,\"company\":\"Orbit\",\"coverage\":\"consolidated\",\"current\":\"300\",\"id\":\"forecast_origin\",\"kind\":\"Primary\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"200\",\"qualified\":true,\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"forecast_origin: forecast consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"},{\"category\":\"actual\",\"closed\":true,\"company\":\"Orbit\",\"coverage\":\"consolidated\",\"current\":\"240\",\"id\":\"report_a\",\"kind\":\"Observation\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"200\",\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"report_a: actual consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"},{\"category\":\"actual\",\"closed\":true,\"company\":\"Orbit\",\"coverage\":\"consolidated\",\"current\":\"240\",\"id\":\"report_b\",\"kind\":\"Observation\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"200\",\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"report_b: actual consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"},{\"category\":\"actual\",\"closed\":true,\"company\":\"Orbit\",\"coverage\":\"consolidated\",\"current\":\"240\",\"id\":\"report_copy\",\"kind\":\"Observation\",\"known_at\":\"2026-10-16T00:00:00Z\",\"metric\":\"revenue\",\"period\":\"FY2025\",\"previous\":\"200\",\"task\":\"company_reviews\",\"tenant\":\"A\",\"text\":\"report_copy: actual consolidated annual revenue.\",\"unit\":\"million_USD\",\"valid_at\":\"2026-10-16T00:00:00Z\"}],\"request\":{\"company\":\"Orbit\",\"knowledge\":\"2026-10-16T20:47:34Z\",\"market\":\"2026-10-16T20:47:34Z\",\"task\":\"company_reviews\",\"tenant\":\"A\"}}"
+    }
+  },
+  "responses": {
+    "propose_method": {
+      "raw_output": "{\"title\":\"Company Review Method\",\"interpretation\":\"{\\\"proposal\\\":{\\\"schema_version\\\":2,\\\"family\\\":\\\"qualified_origins\\\",\\\"scope\\\":\\\"task\\\",\\\"company\\\":\\\"\\\",\\\"min_origins\\\":2,\\\"separate_forecasts\\\":true},\\\"acknowledgement\\\":\\\"For all your company reviews, I’ll keep forecasts separate from actual results and use the confirmed label only when at least two distinct qualified primary evidence origins support the same actual figures for the same metric, period, unit and coverage.\\\"}\",\"observations\":[],\"rule_references\":[]}",
+      "raw_sha256": "36eff399a02d797e774760cf73dafa5c19c27e2372d3b514514ebc2204b6923b"
+    },
+    "review_acme": {
+      "raw_output": "{\"title\":\"Acme FY2025 Review\",\"interpretation\":\"{\\\"summary\\\":\\\"Acme's FY2025 consolidated annual revenue increased from USD 100 million to USD 110 million, a gain of USD 10 million. No applicable confirmed user policy was retrieved.\\\",\\\"status\\\":\\\"policy_required\\\",\\\"origin_ids\\\":[\\\"acme_filing\\\"]}\",\"observations\":[{\"metric\":\"revenue\",\"previous\":\"100\",\"current\":\"110\",\"change\":\"10\",\"unit\":\"million_USD\",\"evidence_ids\":[\"acme_filing\",\"acme_report\"]}],\"rule_references\":[]}",
+      "raw_sha256": "10e7a8c7391445368690e6102d9bfd911f614c418a7f62d6b6659c0481040c90"
+    },
+    "review_orbit": {
+      "raw_output": "{\"title\":\"Orbit company review\",\"interpretation\":\"{\\\"summary\\\":\\\"Confirmed FY2025 consolidated actual revenue increased from USD 200 million to USD 240 million, a USD 40 million gain, supported by two distinct qualified primary origins. The separate USD 300 million forecast is not an actual result.\\\",\\\"status\\\":\\\"evidence_policy_met\\\",\\\"origin_ids\\\":[\\\"filing_c\\\",\\\"filing_w\\\"]}\",\"observations\":[{\"metric\":\"FY2025 consolidated revenue — actual\",\"previous\":\"200\",\"current\":\"240\",\"change\":\"40\",\"unit\":\"million_USD\",\"evidence_ids\":[\"filing_c\",\"filing_w\"]},{\"metric\":\"FY2025 consolidated revenue — forecast\",\"previous\":\"200\",\"current\":\"300\",\"change\":\"100\",\"unit\":\"million_USD\",\"evidence_ids\":[\"forecast_origin\"]}],\"rule_references\":[\"evidence_method_v1\"]}",
+      "raw_sha256": "6a0c721fc084625765e763e547f56d0c8d3262ce4d79a33d754067c67965006f"
+    }
+  },
+  "retrieval_queries": {
+    "review_acme": [
+      {
+        "params": {
+          "company": "Acme",
+          "knowledge": "2026-10-16T20:46:32Z",
+          "market": "2026-10-16T20:46:32Z",
+          "task": "company_reviews",
+          "tenant": "A"
+        },
+        "query": "paths",
+        "query_sha256": "24d98b519be3b4eb452cfca9395ac8e2e3cc33d63a55c045ec25f0b35a388e89",
+        "rows": [
+          [
+            [
+              "acme_report",
+              "acme_filing"
+            ]
+          ]
+        ]
+      },
+      {
+        "params": {
+          "company": "Acme",
+          "knowledge": "2026-10-16T20:46:32Z",
+          "market": "2026-10-16T20:46:32Z",
+          "task": "company_reviews",
+          "tenant": "A"
+        },
+        "query": "policies",
+        "query_sha256": "8641b9799d7f80e82b5890dff5c1e0ea27498ab9daa57c7205513345d1c71400",
+        "rows": []
+      }
+    ],
+    "review_orbit": [
+      {
+        "params": {
+          "company": "Orbit",
+          "knowledge": "2026-10-16T20:47:34Z",
+          "market": "2026-10-16T20:47:34Z",
+          "task": "company_reviews",
+          "tenant": "A"
+        },
+        "query": "paths",
+        "query_sha256": "24d98b519be3b4eb452cfca9395ac8e2e3cc33d63a55c045ec25f0b35a388e89",
+        "rows": [
+          [
+            [
+              "forecast_article",
+              "forecast_origin"
+            ]
+          ],
+          [
+            [
+              "report_a",
+              "filing_w"
+            ]
+          ],
+          [
+            [
+              "report_b",
+              "filing_c"
+            ]
+          ],
+          [
+            [
+              "report_copy",
+              "report_a",
+              "filing_w"
+            ]
+          ]
+        ]
+      },
+      {
+        "params": {
+          "company": "Orbit",
+          "knowledge": "2026-10-16T20:47:34Z",
+          "market": "2026-10-16T20:47:34Z",
+          "task": "company_reviews",
+          "tenant": "A"
+        },
+        "query": "policies",
+        "query_sha256": "8641b9799d7f80e82b5890dff5c1e0ea27498ab9daa57c7205513345d1c71400",
+        "rows": [
+          [
+            "{\"company\":\"\",\"confirmation\":\"A\",\"id\":\"evidence_method_v1\",\"kind\":\"Policy\",\"known_at\":\"2026-10-16T20:47:05Z\",\"message\":\"For all my company reviews, keep forecasts separate from actual results. Use the confirmed label only when at least two distinct qualified primary evidence origins support the same actual figures for the same metric, period, unit and coverage.\",\"min_origins\":2,\"proposal_sha256\":\"2c83c684bdfb2c955af7d64aa339655cbe8310b0f4890023c278c18454c41836\",\"rule_id\":\"evidence_method\",\"scope\":\"task\",\"separate_forecasts\":true,\"status\":\"accepted\",\"supersedes\":\"\",\"task\":\"company_reviews\",\"tenant\":\"A\",\"valid_at\":\"2026-10-16T20:47:05Z\",\"version\":1}"
+          ]
+        ]
+      }
+    ]
+  },
+  "schema_version": 1
+}
